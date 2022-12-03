@@ -1,19 +1,20 @@
 ﻿//Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-int rows = 6; int columns = 6;
+int rows = ReadInt("Введите количество строк: ");
+int columns = ReadInt("Введите количество столбцов: ");
 int[,] array = new int[rows, columns];
 FillArray(array);
 PrintImage(array);
 Console.Write("Среднее арифметическое каждого столбца: ");
-for (int j = 0; j < columns; j++)
+for (int j = 0; j < columns ; j++)
 {
     double averageColumns = 0;
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         averageColumns += array[i, j];
     }
-    averageColumns /= array.GetLength(1); 
+    averageColumns /= array.GetLength(0);
     averageColumns = Math.Round(averageColumns, 1);
-    Console.Write(averageColumns + ";");
+    Console.Write(averageColumns + "; ");
 }
 
 void PrintImage(int[,] image)
@@ -37,4 +38,9 @@ void FillArray(int[,] matr)
             matr[i, j] = new Random().Next(1, 10);
         }
     }
+}
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
