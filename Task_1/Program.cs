@@ -4,7 +4,7 @@ int columns = ReadInt("Введите количество столбцов: ");
 double[,] numbers = new double[rows, columns];
 FillArray(numbers);
 PrintImage(numbers);
-void PrintImage(double[,] image) //Немного переписанный метод для вывода нужного изображения
+void PrintImage(double[,] image) 
 {
     for (int i = 0; i < image.GetLength(0); i++)
     {
@@ -15,7 +15,7 @@ void PrintImage(double[,] image) //Немного переписанный ме�
         Console.WriteLine();
     }
 }
-void FillArray(double[,] matr) //Метод для случайного заполнения двумерного массива
+void FillArray(double[,] matr) 
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
